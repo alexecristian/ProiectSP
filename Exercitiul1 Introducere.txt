@@ -1,0 +1,5 @@
+a=0.1 :0.1 :0.2;
+b=ones(20,1);
+%matricea de tip coloana b are nevoie de 20 de elemente ca inmultirea sa aiba sens%
+c=b*a;
+x=b.*a;%rezultatul este absolut similar ca in variabila c%
