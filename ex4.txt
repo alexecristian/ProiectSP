@@ -1,6 +1,9 @@
-A = 0.8;   % amplitudinea 
-T = 3;
-F = 1 / T;
-t = 0:0.002:3;    % timpul de la 0 la 3 secunde cu rezolutie temporara de 2ms
-s = A*sin(2*pi*F*t);     % sintaxa sin deseneaza un grafic sinusoidal cu amplitudinea A, perioada t si frecventa F
-plot(t,s,'.-'),xlabel('Timp [s]')],ylabel('Amplitudine'),title('Sine Periodic Wave'),grid;
+x = 0:0.002:10; %rezolutie de 2ms
+y = 0.8*sin(2*pi*F*x);subplot(3,2,3),plot(x,y,'r'),axis([0 10 -1 1]),grid,title('Neredresat');
+
+y = redm(y);subplot(3,2,2),plot(x,y,'r'),axis([0 10 -1 1]),grid,title('2ms');
+x = 0:0.02:10; %seteaza noua rezolutie la 20ms
+y = 0.8*sin(2*pi*F*x);y = redm(y);subplot(3,2,4),plot(x,y,'r'),grid,axis([0 10 -1 1]),title('20ms');
+
+x = 0:0.2:10; % seteaza noua rezolutie la 200ms
+y = 0.8*sin(2*pi*F*x);y = redm(y);subplot(3,2,6),plot(x,y,'r'),axis([0 10 -1 1]),grid,title('200ms');
