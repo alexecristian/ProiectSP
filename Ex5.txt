@@ -1,12 +1,12 @@
-Se va genera un semnal cu rezolutie temporara de 2ms,20ms,200ms pentru un semnal de tipul:
-4.Semnal sinusoidal redresor mono alternanta 
-Perioada semnalului sinusoidal initial(neredresat) 3s.
-Amplitudine de :0.8
-Raspuns:
--Semnal sinusoidal redresat dubla alternanta
-A = 1.5;   % amplitudinea 
-T = 4;
-F = 1 / T;
-t = 0:0.002:4;    % timpul de la 0 la 4 secunde cu rezolutie temporara de 2ms
-s = A*sin(2*pi*F*t);     % sintaxa sin deseneaza un grafic sinusoidal cu amplitudinea A, perioada t si frecventa F
-plot(t,s,'.-'),xlabel('Timp [s]')],ylabel('Amplitudine'),title('Sine Periodic Wave'),grid;
+T = 4; %perioada
+F = 1/T;%frecventa
+
+x = 0:0.002:8;
+y = 1.5*sin(2*pi*F*x);subplot(3,2,3),plot(x,y,'g'),grid,title('Initial'),axis([0 8 -2 2]);
+y = red_dublu(y);subplot(3,2,2),plot(x,y,'g'),grid,title('2ms'),axis([0 8 -2 2]);
+x = 0:0.02:8;
+y = 1.5*sin(2*pi*F*x);
+y = red_dublu(y);subplot(3,2,4),plot(x,y,'g'),grid,title('20ms'),axis([0 8 -2 2]);
+x = 0:0.2:8;
+y = 1.5*sin(2*pi*F*x);y = red_dublu(y);
+subplot(3,2,6),plot(x,y,'g'),grid,title('200ms'),axis([0 8 -2 2]);
